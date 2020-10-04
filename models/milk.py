@@ -5,6 +5,6 @@ class MilkPacket:
         self. volume_in_milliliters = volume_in_milliliters
         self.calories_in_100_grams = calories_in_100_grams
     
-    def __str__(self):
-        return f'Manufacturer is {self.manufacturer}, {self.fat_percentage}% fat, {self.volume_in_milliliters} ' \
-               f'milliliters, {self.calories_in_100_grams} calories in 100 grams of milk'
+    def __repr__(self):
+        return f'Manufacturer:{self.manufacturer}, fat:{self.fat_percentage}%, milliliters:' \
+               f'{self.volume_in_milliliters}, calories:{self.calories_in_100_grams}'
