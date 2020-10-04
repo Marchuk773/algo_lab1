@@ -21,10 +21,10 @@ if __name__ == '__main__':
     selection.sort(milk_packet_list, key=lambda milk_packet: milk_packet.fat_percentage)
     selection_end_time = time.time()
     print(f'List after select sort: {milk_packet_list}')
-    print(f'--- {selection_end_time - selection_start_time} seconds for selection ---')
+    print(f'--- {selection_end_time - selection_start_time} seconds for selection sort ---')
     
     quicksort_start_time = time.time()
     quick.sort(milk_packet_list, key=lambda milk_packet: milk_packet.calories_in_100_grams)
     quicksort_end_time = time.time()
     print(f'List after quick sort: {milk_packet_list}')
-    print(f'--- {quicksort_end_time - quicksort_start_time} seconds for quick ---')
+    print(f'--- {quicksort_end_time - quicksort_start_time} seconds for quick sort ---')

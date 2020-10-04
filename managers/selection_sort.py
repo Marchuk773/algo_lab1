@@ -7,7 +7,7 @@ class SelectionSort:
         self.comparison_counter = 0
         self.swap_counter = 0
     
-    def sort(self, given_list, key):
+    def sort(self, given_list, key=lambda obj: obj):
         self.comparison_counter = 0
         self.swap_counter = 0
         for i in range(len(given_list)):
@@ -20,6 +20,6 @@ class SelectionSort:
                 self.swap_counter += 1
                 swap(given_list, i, biggest_element_index)
         
-        print(f'Selection sort, '
+        print('\nSelection sort:\n'
               f'№ of compares in selection sort = {self.comparison_counter}\n'
               f'№ of swaps in selection sort = {self.swap_counter}')
