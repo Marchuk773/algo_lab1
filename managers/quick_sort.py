@@ -14,9 +14,6 @@ class QuickSort:
         self.swap_counter = 0
         shuffle(given_list)
         self.sort_util(given_list, 0, len(given_list) - 1, key)
-        print('\nQuick sort:\n'
-              f'№ of compares in quick sort = {self.comparison_counter}\n'
-              f'№ of swaps in quick sort = {self.swap_counter}')
     
     def sort_util(self, given_list, start, end, key):
         if start >= end:
@@ -39,13 +36,18 @@ class QuickSort:
                 self.comparison_counter += 2
                 right_border -= 1
             
-            if right_border <= left_border:
-                self.comparison_counter += 1
-                break
-
             self.comparison_counter += 1
+            if right_border <= left_border:
+                break
+            
             swap(given_list, left_border, right_border)
             self.swap_counter += 1
         
         swap(given_list, right_border, start)
+        self.swap_counter += 1
         return right_border
+    
+    def print_info(self):
+        print('\nQuick sort:\n'
+              f'№ of compares in quick sort = {self.comparison_counter}\n'
+              f'№ of swaps in quick sort = {self.swap_counter}')
