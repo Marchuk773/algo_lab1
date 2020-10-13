@@ -11,8 +11,10 @@ if __name__ == '__main__':
         next(csv_reader)
         
         for line in csv_reader:
-            milk_packet_list.append(milk.MilkPacket(manufacturer=line[0], fat_percentage=line[1],
-                                                    volume_in_milliliters=line[2], calories_in_100_grams=line[3]))
+            milk_packet_list.append(milk.MilkPacket(manufacturer=line[0],
+                                                    fat_percentage=line[1],
+                                                    volume_in_milliliters=line[2],
+                                                    calories_in_100_grams=line[3]))
     
     quick = quick_sort.QuickSort()
     selection = selection_sort.SelectionSort()

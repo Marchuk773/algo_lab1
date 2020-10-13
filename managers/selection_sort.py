@@ -16,6 +16,7 @@ class SelectionSort:
                 self.comparison_counter += 1
                 if key(given_list[biggest_element_index]) < key(given_list[j]):
                     biggest_element_index = j
+            self.comparison_counter += 1
             if biggest_element_index != i:
                 self.swap_counter += 1
                 swap(given_list, i, biggest_element_index)

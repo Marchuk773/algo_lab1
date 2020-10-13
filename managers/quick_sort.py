@@ -16,7 +16,8 @@ class QuickSort:
         self.sort_util(given_list, 0, len(given_list) - 1, key)
     
     def sort_util(self, given_list, start, end, key):
-        if start >= end:
+        if end - start < 9:
+            self.insertion_sort(given_list, start, end, key)
             return
         pivot = self.partition(given_list, start, end, key)
         self.sort_util(given_list, start, pivot - 1, key)
@@ -46,6 +47,15 @@ class QuickSort:
         swap(given_list, right_border, start)
         self.swap_counter += 1
         return right_border
+    
+    def insertion_sort(self, given_list, start, end, key=lambda obj: obj):
+        for i in range(start, end + 1):
+            index = i
+            while index > 0 and key(given_list[index - 1]) > key(given_list[index]):
+                self.comparison_counter += 2
+                self.swap_counter += 1
+                swap(given_list, index - 1, index)
+                index -= 1
     
     def print_info(self):
         print('\nQuick sort:\n'
